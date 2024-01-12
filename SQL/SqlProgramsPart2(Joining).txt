@@ -1,0 +1,19 @@
+1.Write a query to display the customer number, customer firstname, customer lastname who has taken loan from more then 1 bank.
+
+2.Write a query to display the number of client who have asked for loans but they don’t have any account in the bank though they are registered customers. Give the count an alias name of Count.
+
+
+3.Write a query to the count the number of customers who have registration but no account in the bank.
+Give the alias name as Count_Customer.
+
+4.Write a query to display citywise, branchwise count of accounts. For the branch where we don’t have any records display 0.
+
+
+5.Write a query to display the customer’s firstname who have multiple accounts atleast in 2 banks.
+
+
+
+6.Write a query to display the  account number who has done the highest transaction.
+
+For example the account A00023 has done 5 transactions i.e. suppose 3 withdrawal and 2 deposits. Whereas the account A00024 has done 3 transactions i.e. suppose 2 withdrawals and 1 deposit. So account number of A00023 should be displayed. 
+

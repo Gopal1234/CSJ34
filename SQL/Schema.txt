@@ -1,0 +1,50 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use RMS1;
+Database changed
+mysql> CREATE TABLE Persons2 (
+    ->     PersonID int,
+    ->     LastName varchar(255),
+    ->     FirstName varchar(255),
+    ->     Address varchar(255),
+    ->     City varchar(255),
+    ->   PRIMARY KEY (PersonID)
+    -> );
+Query OK, 0 rows affected (0.83 sec)
+
+mysql> CREATE TABLE Orders (
+    ->     OrderID int NOT NULL,
+    ->     OrderNumber int NOT NULL,
+    ->     PersonID int,
+    ->     PRIMARY KEY (OrderID),
+    ->     CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+    ->     REFERENCES Persons2(PersonID)
+    -> );
+Query OK, 0 rows affected (0.99 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> insert into Persons2 values(011, 'Upadhyay', 'Gopal' ,'Delhi','Janakpuri'),(022, 'Upadhyay', 'Ankit' ,'WB','Kolkata'),
+    ->
+    -> (033, 'Upadhyay', 'Sourav' ,'UP','Bareli');
+Query OK, 3 rows affected (0.23 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql>

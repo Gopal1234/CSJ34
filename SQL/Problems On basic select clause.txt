@@ -1,0 +1,44 @@
+1.Write a query to display the customer number , firstname, customer’s date of birth . Display in a sorted order of date of birth year and within that sort by firstname.
+
+SELECT custid, fname, dob
+FROM customer
+ORDER BY year(DOB), fname;
+
+
+2.Write a query to display customer’s number, first name and middle name. The customer’s who don’t have middle name, for them display the last name. Give the alias name as Cust_Name.
+
+SELECT concat(fname, " ", ifnull(mname, ltname)) AS 'CUST_NAME'
+FROM customer;
+
+
+
+3.Write a query to display the number of customer’s from Delhi. Give the count an alias name of Cust_Count.
+
+SELECT count(custid) as 'CUST_COUNT'
+FROM customer
+WHERE city='DELHI';
+
+4.Write a query to display  the customer number, customer firstname,account number for the customer’s whose accounts were 
+created after 15th of any month.
+SELECT c.custid, c.fname, a.acnumber
+FROM customer c, account a
+WHERE c.custid=a.custid AND day(a.aod)>15;
+
+5.Write a query to display the  customers firstname, city and account number who are not into business, service or studies.
+
+SELECT c.fname, c.city, a.acnumber
+FROM customer c, account a
+WHERE c.custid=a.custid AND occupation not in ('Business', 'service', 'student');
+
+
+6.Write a query to display city name and count of branches in that city. Give the count of branches an alias name of Count_Branch.
+SELECT bcity, count(bid) as 'COUNT_BRANCH'
+FROM branch
+GROUP BY bcity;
+
+
+7.Write a query to display account id, customer’s firstname, customer’s lastname for the customer’s whose account is Active.
+
+SELECT a.acnumber, c.fname, c.ltname
+FROM customer c, account a
+WHERE c.custid=a.custid AND a.astatus='active';

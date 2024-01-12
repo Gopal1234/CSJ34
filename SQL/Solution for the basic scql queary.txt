@@ -1,0 +1,65 @@
+create database CMS
+ues CMS
+
+CREATE TABLE Department
+(
+department_id int primary key,
+department_name varchar(30),
+department_block_number int
+);
+
+
+CREATE TABLE Student
+(
+student_id int primary key,
+student_name varchar(30),
+address varchar(40),
+city varchar(30),
+department_id int
+foreign key(department_id) references Department(department_id)
+);
+
+CREATE TABLE Staff
+(
+staff_id int primary key,
+staff_name varchar(30),
+department_id int
+foreign key(department_id) references Department(department_id)
+);
+
+CREATE TABLE Subject
+(
+subject_id int primary key,
+subject_name varchar(30),
+subject_code varchar(10),
+staff_id int
+foreign key(staff_id) references Staff(staff_id)
+);
+
+
+
+CREATE TABLE Marks
+(
+  value int ,
+  subject_id int ,
+  student_id int ,
+  primary key(subject_id,student_id),
+  foreign key(subject_id) references Subject(subject_id),
+  foreign key(student_id) references Student(student_id)
+);
+
+
+Question 2:- Ans
+select department_name from Department where department_block_number=3 order by department_name
+Question 3:-
+SELECT * FROM Department
+select * from student
+SELECT student_name, department_name from student s INNER JOIN Department D
+
+ON s.student_id=D.department_id where s.city='Coimbatore' order by s.student_name
+
+Question : 4 -
+
+select city+'  '+address as Address from student order by Address
+
+select concat(city,address) as Address from student order by Address

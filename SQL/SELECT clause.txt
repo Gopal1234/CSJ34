@@ -1,0 +1,57 @@
+
+ 
+
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+ 1                Ankit            Anni               Kolkata     124             India
+ 2                Arnab            Sekhar             Chennai     778             India
+ 3                 Shiva           Geetha             Coimbatore  555             US
+ 4                Sourav           Sam                  Kolkata    666            India
+
+Distinct:
+
+
+
+SELECT DISTINCT City FROM Customers;
+
+SELECT COUNT(DISTINCT City) FROM Customers;
+
+
+Where 
+
+SELECT * FROM Customers
+WHERE CustomerID=1;
+
+Operator	Description	Example
+=	Equal	
+>	Greater than	
+<	Less than	
+>=	Greater than or equal	
+<=	Less than or equal	
+<>	Not equal. Note: In some versions of SQL this operator may be written as !=	
+BETWEEN	Between a certain range	
+LIKE	Search for a pattern	
+IN	To specify multiple possible values for a column	
+
+AND Syntax:
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+
+AND operator:
+SELECT * FROM Customers
+WHERE Country='India' AND City='Kolkata';
+
+
+OR Syntax:
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+
+
+
+
+
+

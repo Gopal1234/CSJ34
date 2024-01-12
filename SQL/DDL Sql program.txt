@@ -1,0 +1,59 @@
+Sql Query 1:
+ Create a database called "CMS"
+Create a table named "Department" with the following fields
+i)department_id (Data type-int, primary key)
+ii)department_name(Data type-string)
+iii)department_block_number(Data type-int)
+
+Sql Queary 2:
+In same database called "CMS"
+ 
+Create a table called "Student" with the following fields,
+i)student_id(Data type int, primary key)
+ii)student_name(Data type string)
+iii)address(Data type string)
+iv)city(Data type string)
+v)department_id (Data type int , Foreign key refer to the primary key of "Department " Table)
+
+Sql Queary 3:
+
+In the same database called "CMS"
+Create a table called "staff" with the follwing fields,
+i)staff_id (Data typr int, primary key)
+ii)staff_name(Data type string)
+iii)department_id(Data type int, Foreign key refer to the Department table)
+
+Sql Query 4:
+
+In same database called "CMS" 
+
+create a table called "Subject" with the following fields,
+
+i)subject_id (data type int, primary key)
+ii)subject_name(Data type string)
+iii)subject_code (Data type string)
+iv)staff_id (data type int, Foreign key reffer to the primary key of staff table)
+
+
+Sql Query 5:
+
+In same database called "CMS" 
+
+create a table called "Marks" with the following fields,
+
+i)value (data type int)
+ii)subject_id(Data type int, primary key, Foreignkey reffer to the primary key of Subject Table)
+iii)student_id (Data type int, primary key,Foreignkey reffer to the primary key of Student Table))
+
+
+
+Sql Query 6:
+Insert 5 records in every table in the "CMS" database.
+
+
+Sql Query 7:
+Write a queary which display all department name whose department_block_number is 3 and sorted by department name.
+
+
+Sql Query 8;
+Write a sql query to display "Address" with combination of city and address and sort that data by Address.

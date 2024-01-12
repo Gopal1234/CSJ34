@@ -1,0 +1,39 @@
+1.Write a query to display the customer number, customer firstname, customer lastname who has taken loan from more then 1 bank
+
+SELECT c.custid, c.fname, c.ltname
+FROM customer c
+WHERE c.custid in (SELECT custid FROM loan GROUP BY custid having count(bid)>1);
+
+2.Write a query to display the number of client who have asked for loans but they don’t have any account in the bank though they are registered customers. Give the count an alias name of Count.
+
+SELECT count(custid) as 'COUNT'
+FROM loan
+WHERE custid NOT IN (SELECT custid from account);
+
+
+
+3.Write a query to the count the number of customers who have registration but no account in the bank.
+Give the alias name as Count_Customer.
+
+SELECT count(custid) as 'Count_Customer'
+FROM customer 
+WHERE custid not in (SELECT custid from account);
+
+
+4.Write  a query to display the customer’s firstname who have more then 1 account.
+
+SELECT fname
+FROM customer
+WHERE custid IN (SELECT custid FROM account GROUP BY custid HAVING count(custid)>1);
+
+
+
+5.Write a query to display the customer’s firstname who have multiple accounts atleast in 2 banks.
+
+SELECT fname
+FROM customer
+WHERE custid in (SELECT custid FROM account GROUP BY custid HAVING count(bid)>=2);
+
+
+
+
